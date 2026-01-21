@@ -1,19 +1,57 @@
-# .gitignore
+# ============================================
+# EXCLUDE LARGE FILES (Not needed for deployment)
+# ============================================
 
-# ============================================
-# Data Files (Too large for Git)
-# ============================================
+# Raw data (never push - too large)
 data/raw/ml-25m/
 data/raw/*.zip
-data/processed/*.csv
-data/processed/*.npz
-data/processed/*.pkl
-*.h5
-*.hdf5
 
-# Keep data directories but not contents
+# Large rating CSVs (NOT used by Streamlit app)
+data/processed/train_ratings.csv
+data/processed/test_ratings.csv
+
+# Text features CSV (redundant - we have the .npy version)
+data/processed/movies_with_text_features.csv
+
+# MASSIVE similarity matrices (17GB! - computed on-demand in app)
+models/saved_models/genre_similarity_matrix.npy
+models/saved_models/tfidf_similarity_matrix.npy
+
+# Large Neural CF model (optional - can work without it)
+models/saved_models/neural_cf_model.h5
+
+# ============================================
+# INCLUDE ESSENTIAL FILES
+# ============================================
+
+# Essential processed data (TOTAL: ~27 MB)
+!data/processed/movies_with_genre_features.csv
+!data/processed/movie_features.csv
+!data/processed/user_features.csv
+!data/processed/interaction_matrix_sparse.npz
+!data/processed/interaction_matrix_mappings.pkl
+!data/processed/*.pkl
+
+# Essential model files (TOTAL: ~70 MB)
+!models/saved_models/genre_features.npy
+!models/saved_models/tfidf_features.npy
+!models/saved_models/svd_user_factors.npy
+!models/saved_models/svd_sigma.npy
+!models/saved_models/svd_movie_factors.npy
+!models/saved_models/nmf_user_factors.npy
+!models/saved_models/nmf_movie_factors.npy
+!models/saved_models/nmf_model.pkl
+!models/saved_models/knn_model.pkl
+!models/saved_models/movie_id_to_idx.pkl
+
+# Reports (TOTAL: ~5 MB)
+!reports/eda_figures/*.png
+!reports/*.csv
+
+# Keep directory structure
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+!models/saved_models/.gitkeep
 
 # ============================================
 # Python
@@ -23,24 +61,10 @@ __pycache__/
 *$py.class
 *.so
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+dist/
+build/
+.pytest_cache/
 
 # ============================================
 # Virtual Environment
@@ -49,8 +73,6 @@ MANIFEST
 venv/
 env/
 ENV/
-env.bak/
-venv.bak/
 
 # ============================================
 # IDE
@@ -59,62 +81,25 @@ venv.bak/
 .idea/
 *.swp
 *.swo
-*~
 .DS_Store
 Thumbs.db
 
 # ============================================
-# Jupyter Notebook
+# Jupyter
 # ============================================
 .ipynb_checkpoints/
 *.ipynb_checkpoints/
 
 # ============================================
-# Models (Large files)
-# ============================================
-models/saved_models/*.pkl
-models/saved_models/*.h5
-models/saved_models/*.pt
-models/saved_models/*.pth
-
-# Keep models directory
-!models/saved_models/.gitkeep
-
-# ============================================
-# Reports (Keep only final versions)
-# ============================================
-reports/temp/
-reports/*.tmp
-
-# Keep EDA figures
-!reports/eda_figures/
-
-# ============================================
-# Streamlit
-# ============================================
-.streamlit/secrets.toml
-
-# ============================================
 # Logs
 # ============================================
-logs/
 *.log
+logs/
 
 # ============================================
-# OS Files
+# Git LFS (not using)
 # ============================================
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+.gitattributes
 
-# ============================================
-# Temporary Files
-# ============================================
-*.tmp
-*.bak
-*.swp
-*~.nib
+test_recommendation.py
+streamlit_cloud_setup.sh

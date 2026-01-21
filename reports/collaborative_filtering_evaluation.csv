@@ -1,0 +1,4 @@
+model,rmse,mae,n_samples,note
+SVD,3.458703243849862,3.2853551143405793,34826.0,
+NMF,,,,Trained successfully
+KNN,,,,Trained successfully

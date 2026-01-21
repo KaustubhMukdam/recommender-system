@@ -1,0 +1,11 @@
+Model,MAE,RMSE,Hit_Rate,Category
+"Content-Based
+(Genre)",,,0.0306,Content-Based
+"Content-Based
+(TF-IDF)",,,0.0309,Content-Based
+SVD,3.29,3.46,,Collaborative
+NMF,,,,Collaborative
+KNN,,,,Collaborative
+Neural CF,0.65,0.71,,Collaborative
+"Hybrid
+(SVD+NMF)",2.44,2.84,,Hybrid

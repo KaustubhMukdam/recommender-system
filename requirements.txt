@@ -89,3 +89,13 @@ notebook>=7.0.6
 pillow>=10.1.0
 protobuf>=4.23.4
 charset-normalizer>=3.3.2
+
+# =============================================
+# Streamlit
+# =============================================
+streamlit==1.29.0
+plotly==5.18.0
+streamlit-option-menu==0.3.6
+
+# Other
+python-dateutil==2.8.2
