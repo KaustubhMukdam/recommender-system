@@ -35,7 +35,6 @@ recommender-system/
 │   ├── models/                 # ML models
 │   └── utils/                  # Helper functions
 ├── streamlit_app/              # Web application
-├── notebooks/                  # Jupyter notebooks
 ├── reports/                    # Visualizations & reports
 ├── models/                     # Saved models
 └── tests/                      # Unit tests
