@@ -1,0 +1,120 @@
+# .gitignore
+
+# ============================================
+# Data Files (Too large for Git)
+# ============================================
+data/raw/ml-25m/
+data/raw/*.zip
+data/processed/*.csv
+data/processed/*.npz
+data/processed/*.pkl
+*.h5
+*.hdf5
+
+# Keep data directories but not contents
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ============================================
+# Virtual Environment
+# ============================================
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ============================================
+# IDE
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================
+# Jupyter Notebook
+# ============================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# ============================================
+# Models (Large files)
+# ============================================
+models/saved_models/*.pkl
+models/saved_models/*.h5
+models/saved_models/*.pt
+models/saved_models/*.pth
+
+# Keep models directory
+!models/saved_models/.gitkeep
+
+# ============================================
+# Reports (Keep only final versions)
+# ============================================
+reports/temp/
+reports/*.tmp
+
+# Keep EDA figures
+!reports/eda_figures/
+
+# ============================================
+# Streamlit
+# ============================================
+.streamlit/secrets.toml
+
+# ============================================
+# Logs
+# ============================================
+logs/
+*.log
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ============================================
+# Temporary Files
+# ============================================
+*.tmp
+*.bak
+*.swp
+*~.nib

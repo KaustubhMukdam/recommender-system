@@ -1,0 +1,2 @@
+total_ratings,unique_users,unique_movies,avg_rating,std_rating,median_rating,sparsity,avg_ratings_per_user,avg_ratings_per_movie
+25000095,162541,59047,3.533854451353085,1.0607439611423517,3.5,0.9973951609474271,153.80793153727367,423.3931444442563
